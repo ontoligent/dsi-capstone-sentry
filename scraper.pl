@@ -10,14 +10,18 @@ sub download_daily_docs {
   for my $line1 (@doc1) {
     if ($line1 =~ /<a href="\/(Archives\/edgar\/data\/\d+\/(\d+-\d+-\d+)-index.html)">10-K/) {
       my $id = $2;
+      my $tenkfile = "docs-10k/${id}_10k.html";
+      if (-e $tenkfile) {
+        print "$tenkfile aleady exists\n";
+        next;
+      }
       my $url2 = "http://www.sec.gov/$1";
       my $doc2 = get($url2);
       my @doc2 = split /\n/, $doc2;
       for my $line2 (@doc2) {
         if ($line2 =~ /<td scope="row"><a href="(\/Archives\/edgar\/data\/\d+\/\d+\/.+10k.htm)"/) {
           my $url = "http://www.sec.gov$1";
-          my $tenkfile = "docs-10k/${id}_10k.html";
-          print "OUTFILE: $tenkfile\n";
+          print "Creating $tenkfile\n";
           getstore($url,$tenkfile);
           last;
         }    
