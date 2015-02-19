@@ -1,13 +1,25 @@
-Info for directly access EDGAR data can be found here
+Info for directly accessing EDGAR data can be found here
 
     http://datahub.io/dataset/edgar
 
-They give a good overvier. You can also find info on the EDGAR site
-itself at this URL:
+They give a good overview. For example, they show how URLs are
+constructed so that you can grab directly indices of contents:
+
+    ftp://ftp.sec.gov/edgar/full-index/{YYYY}/QTR{1-4}/{index-name}.[gz|zip]
+
+They also link to sites like this one:
+
+    http://www.secdatabase.com/
+
+You can also find info on the EDGAR site itself at this URL:
+
+    http://www.sec.gov/cgi-bin/edgar_indices
+
+    http://www.sec.gov/edgar/indices/fullindex.htm
 
     http://www.sec.gov/edgar/searchedgar/ftpusers.htm
 
-Below is a text version of this page (with no links):
+Below is a text version of the second (alas with no links):
 
 Information for FTP Users
 -------------------------
